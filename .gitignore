@@ -1,0 +1,10 @@
+/target
+/node_modules
+/.svelte-kit
+/build
+CLAUDE.md
+REPLIT.md
+.claude/
+.replit/
+docs/
+/captures/

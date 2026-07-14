@@ -1,0 +1,93 @@
+/* Design tokens. Dark is the base; light overrides by attribute or OS preference. */
+:root {
+  --bg: radial-gradient(1200px 800px at 20% -10%, #1c2433 0%, #0d1017 60%);
+  --surface: rgba(30, 38, 52, 0.55);
+  --surface-2: rgba(44, 54, 72, 0.55);
+  --border: rgba(255, 255, 255, 0.10);
+  --text: #e8ecf3;
+  --text-dim: #9aa5b6;
+  --accent: #38bdf8;
+  --blur: 14px;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  --ok: #34d399;
+  --warn: #fbbf24;
+  --err: #f87171;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+/* Light tokens, applied when forced or (in auto mode) when the OS prefers light. */
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: radial-gradient(1200px 800px at 20% -10%, #eaf0f7 0%, #dbe3ee 60%);
+  --surface: rgba(255, 255, 255, 0.60);
+  --surface-2: rgba(255, 255, 255, 0.75);
+  --border: rgba(20, 30, 50, 0.12);
+  --text: #16202e;
+  --text-dim: #5a6675;
+  --accent: #0284c7;
+  --shadow: 0 8px 30px rgba(30, 50, 80, 0.15);
+  --ok: #059669;
+  --warn: #b45309;
+  --err: #dc2626;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']):not([data-theme='light']) {
+    color-scheme: light;
+    --bg: radial-gradient(1200px 800px at 20% -10%, #eaf0f7 0%, #dbe3ee 60%);
+    --surface: rgba(255, 255, 255, 0.60);
+    --surface-2: rgba(255, 255, 255, 0.75);
+    --border: rgba(20, 30, 50, 0.12);
+    --text: #16202e;
+    --text-dim: #5a6675;
+    --accent: #0284c7;
+    --shadow: 0 8px 30px rgba(30, 50, 80, 0.15);
+    --ok: #059669;
+    --warn: #b45309;
+    --err: #dc2626;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+}
+
+button {
+  font: inherit;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+}
+button:hover:not(:disabled) { border-color: var(--accent); }
+button:disabled { opacity: 0.45; cursor: default; }
+
+input, select {
+  font: inherit;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.35rem 0.5rem;
+}

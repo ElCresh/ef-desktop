@@ -1,0 +1,46 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#182741"/>
+      <stop offset="1" stop-color="#0a111e"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="270" x2="0" y2="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f5f9fe"/>
+      <stop offset="1" stop-color="#d3dcec"/>
+    </linearGradient>
+    <linearGradient id="bolt" x1="470" y1="430" x2="560" y2="605" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Rounded-square background -->
+  <rect width="1024" height="1024" rx="220" fill="url(#bg)"/>
+  <ellipse cx="512" cy="520" rx="360" ry="300" fill="url(#glow)"/>
+
+  <!-- Carry handle -->
+  <path d="M 402 374 V 322 Q 402 286 438 286 H 586 Q 622 286 622 322 V 374"
+        fill="none" stroke="url(#body)" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Unit body -->
+  <rect x="290" y="360" width="444" height="392" rx="72" fill="url(#body)"/>
+  <rect x="290.5" y="360.5" width="443" height="391" rx="71.5" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="1"/>
+
+  <!-- Display panel -->
+  <rect x="345" y="408" width="334" height="214" rx="30" fill="#0e1626"/>
+
+  <!-- Lightning bolt -->
+  <path d="M 545 430 L 458 543 L 508 543 L 480 606 L 566 486 L 519 486 Z"
+        fill="url(#bolt)"/>
+
+  <!-- Charge bar -->
+  <rect x="360" y="654" width="48" height="38" rx="10" fill="#38bdf8"/>
+  <rect x="420" y="654" width="48" height="38" rx="10" fill="#38bdf8"/>
+  <rect x="480" y="654" width="48" height="38" rx="10" fill="#38bdf8"/>
+  <rect x="540" y="654" width="48" height="38" rx="10" fill="#33425f"/>
+  <rect x="600" y="654" width="48" height="38" rx="10" fill="#33425f"/>
+</svg>
